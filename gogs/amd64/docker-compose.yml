@@ -1,0 +1,23 @@
+version: '2'
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=gogs
+      - POSTGRES_PASSWORD=gogs
+      - POSTGRES_DB=gogs
+    volumes:
+      - "./pgdata:/var/lib/postgresql/data"
+  gogs:
+    image: vyrphan/gogs-amd64:0.11.29
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./git:/root/gogs-repositories"
+      - "./logs:/code/gogs/log"
+    links:
+      - db
+    depends_on:
+      - db
