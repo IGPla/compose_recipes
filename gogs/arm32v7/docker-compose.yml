@@ -10,7 +10,7 @@ services:
     volumes:
       - "./pgdata:/var/lib/postgresql/data"
   gogs:
-    image: vyrphan/gogs-arm32v6:0.11.29
+    image: vyrphan/gogs-arm32v7:0.11.29
     restart: always
     ports:
       - "3000:3000"
