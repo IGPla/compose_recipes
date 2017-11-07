@@ -1,7 +1,7 @@
 version: '2'
 services:
   jenkins:
-    image: vyrphan/jenkins-arm32v7:2.6.30
+    image: vyrphan/jenkins-arm32v7:2.73.2
     restart: always
     ports:
       - "8080:8080"
