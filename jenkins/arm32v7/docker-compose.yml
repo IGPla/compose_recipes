@@ -1,0 +1,10 @@
+version: '2'
+services:
+  jenkins:
+    image: vyrphan/jenkins-arm32v7:2.6.30
+    restart: always
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - "./jenkinshome:/var/jenkins_home"
